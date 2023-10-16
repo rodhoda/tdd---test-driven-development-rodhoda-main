@@ -11,9 +11,12 @@ namespace sample
        static public string IntegerToWordedString(int number) {
             if (number == 0) 
                 return "zero";
-            if (number == 1) 
+            else if (number == 1) 
                 return "one";
+            else if (number == 2)
+                return "two";
             else return "none";
+
        }  
     }
 }
