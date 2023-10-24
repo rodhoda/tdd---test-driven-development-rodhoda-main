@@ -9,14 +9,13 @@ namespace sample
     static public class Converter
     {
        static public string IntegerToWordedString(int number) {
-            if (number == 0) 
-                return "zero";
-            else if (number == 1) 
-                return "one";
-            else if (number == 2)
-                return "two";
-            else return "none";
 
+            string[] singles = {"zero","one", "two", "three", "four", "five", "six", "seven",
+                                "eight", "nine"};
+            if (number < 10)
+                return singles[number];
+            else
+                return "zero";
        }  
     }
 }
