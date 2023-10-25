@@ -1,16 +1,18 @@
 namespace sample_tests;
 using Xunit;
 using sample.lib;
+using Microsoft.VisualStudio.TestPlatform.Common.Utilities;
+
 
 public class Convert_IntegerToWordedString_Tests
 {
-    // [Fact]
-    // //TODO: This test will become obsolete if the featured function is fully implemented.
-    // public void NotImplementedYet()
-    // {
-    //     Action act = () => Converter.IntegerToWordedString(int.MinValue);
-    //     Assert.Throws<NotImplementedException>(act);
-    // }
+    [Fact]
+    //TODO: This test will become obsolete if the featured function is fully implemented.
+    public void NotImplementedYet()
+    {
+        Action act = () => Converter.IntegerToWordedString(int.MinValue);
+        Assert.Throws<NotImplementedException>(act);
+    }
 
 //  Single Digit Unit Testing
     [Fact]
@@ -73,5 +75,25 @@ public class Convert_IntegerToWordedString_Tests
         Assert.Equal("seventy-zero", words, true);
     }
 
+
+    // Triple Digit Unit Testing
+    [Fact] 
+    public void TripleDigitFirstTest() {
+        int number = 115;
+        string words = Converter.IntegerToWordedString(number);
+        Assert.Equal("one hundred and fifteen",words, true);
+    }
+    [Fact] 
+    public void TripleDigitSecondTest() {
+        int number = 641;
+        string words = Converter.IntegerToWordedString(number);
+        Assert.Equal("six hundred and forty-one",words, true);
+    }
+    [Fact] 
+    public void TripleDigitThirdTest() {
+        int number = 999;
+        string words = Converter.IntegerToWordedString(number);
+        Assert.Equal("nine hundred and ninety-nine",words, true);
+    }
     
 }
